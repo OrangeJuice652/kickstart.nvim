@@ -96,7 +96,33 @@ vim.g.have_nerd_font = false
 -- Set rust-lang/rust.vim confgis
 vim.g.rustfmt_autosave = 1
 
--- [[ Setting options ]]
+-- Set neoclide/coc.nvim configs
+-- https://zenn.dev/yuucu/articles/vimrc-rust-yuucu
+-- 一般設定
+vim.opt.number = true
+vim.opt.updatetime = 300
+
+-- <CR> で補完確定 & coc.nvim の on_enter 呼び出し
+vim.api.nvim_set_keymap(
+  'i',
+  '<CR>',
+  [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
+  { noremap = true, silent = true, expr = true }
+)
+
+-- GoTo コードナビゲーション
+vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', {})
+vim.api.nvim_set_keymap('n', 'gy', '<Plug>(coc-type-definition)', {})
+vim.api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', {})
+vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', {})
+
+-- signcolumn 設定
+if vim.fn.has 'patch-8.1.1564' == 1 then
+  vim.opt.signcolumn = 'number'
+else
+  vim.opt.signcolumn = 'yes'
+end
+
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
