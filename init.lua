@@ -361,6 +361,13 @@ require('lazy').setup({
 
       -- Rust plugins
       { 'rust-lang/rust.vim' },
+
+      {
+        'neoclide/coc.nvim',
+        branch = 'master',
+        build = 'npm ci',
+        lazy = false, -- 起動時に即ロード
+      },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
