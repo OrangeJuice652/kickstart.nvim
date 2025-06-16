@@ -99,7 +99,6 @@ vim.g.rustfmt_autosave = 1
 -- Set neoclide/coc.nvim configs
 -- https://zenn.dev/yuucu/articles/vimrc-rust-yuucu
 -- 一般設定
-vim.opt.number = true
 vim.opt.updatetime = 300
 
 -- <CR> で補完確定 & coc.nvim の on_enter 呼び出し
