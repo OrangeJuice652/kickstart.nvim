@@ -101,6 +101,13 @@ vim.g.rustfmt_autosave = 1
 -- 一般設定
 vim.opt.updatetime = 300
 
+-- automatically install coc extensions
+vim.g.coc_global_extensions = {
+  'coc-json',
+  'coc-pyright',
+  'coc-rust-analyzer',
+}
+
 -- <CR> で補完確定 & coc.nvim の on_enter 呼び出し
 vim.api.nvim_set_keymap(
   'i',

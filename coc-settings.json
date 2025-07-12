@@ -1,4 +1,4 @@
-{
+{ 
   "languageserver": {
     "rust": {
       "command": "rust-analyzer",
